@@ -4,6 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Web Page</title>
+
+    <script>(function(w,d,s,u)
+             {let j=d.createElement(s);j.async=true;j.src="https://assets.channelboost.com/scripts/cts.js?uid=" + u;let f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f);}
+            )(window,document,"script","a733e81d-99c2-4195-8e2b-631d0159e860");
+
+        function trackAndRedirect(event, url) {
+        event.preventDefault(); // Prevents default link action
+        if (typeof trackify !== "undefined" && trackify.trackEvent) {
+          trackify.trackEvent("sign_up");
+          console.log("trackify.trackEvent('sign_up') called");
+          // Open the URL in a new tab after a short delay
+          setTimeout(() => {
+            window.open(url, "_blank", "noopener,noreferrer");
+          }, 300); // Delay for 300ms to allow tracking
+        } else {
+          // If trackify isn't available, open the link immediately
+          window.open(url, "_blank", "noopener,noreferrer");
+        }
+      }
+    
+    </script>
     
 
 
@@ -29,6 +50,8 @@
         }
     </style>
 </head>
+
+    
 <body>
 
     <h1>Welcome to the Web Page</h1>
